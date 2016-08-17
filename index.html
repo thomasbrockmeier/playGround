@@ -15,11 +15,6 @@
     h2 {
       font: bold 20px helvetica,arial,sans-serif;
     }
-    #canvas {
-      border: 1px dashed #000;
-      padding: 10px;
-      font: 16px/18px "times new roman",times,serif;
-    }
     #controls {
       display: -webkit-flex;
       display: flex;
@@ -75,28 +70,56 @@
 <script>
 // JavaScript goes here.
 $(document).ready(function() {
+  var canvas = $('#canvas');
+
+  $('input[type=radio][name=fontname]').load(function(e) {
+    $(canvas).css('font-family', e.target.value);
+  });
+
+  $('#textcolor').load(function(e) {
+    $(canvas).css('color', e.target.value);
+  });
+
+  $('#bgcolor').load(function(e) {
+    $(canvas).css('background', e.target.value);
+  });
+
+  $('#textsize').load(function(e) {
+    $(canvas).css('font-size', e.target.value.toString() + 'px');
+  });
+
+  $('#lineheight').load(function(e) {
+    $(canvas).css('line-height', e.target.value.toString() + 'px');
+  });
+
+  $('#textpadding').load(function(e) {
+    $(canvas).css('padding', e.target.value.toString() + 'px');
+  });
+
+
+
   $('input[type=radio][name=fontname]').change(function(e) {
-    $('#canvas').css('font-family', e.target.value);
+    $(canvas).css('font-family', e.target.value);
   });
 
   $('#textcolor').change(function(e) {
-    $('#canvas').css('color', e.target.value);
+    $(canvas).css('color', e.target.value);
   });
 
   $('#bgcolor').change(function(e) {
-    $('#canvas').css('background', e.target.value);
+    $(canvas).css('background', e.target.value);
   });
 
   $('#textsize').change(function(e) {
-    $('#canvas').css('font-size', e.target.value.toString() + 'px');
+    $(canvas).css('font-size', e.target.value.toString() + 'px');
   });
 
   $('#lineheight').change(function(e) {
-    $('#canvas').css('line-height', e.target.value.toString() + 'px');
+    $(canvas).css('line-height', e.target.value.toString() + 'px');
   });
 
   $('#textpadding').change(function(e) {
-    $('#canvas').css('padding', e.target.value.toString() + 'px');
+    $(canvas).css('padding', e.target.value.toString() + 'px');
   });
 });
 </script>
