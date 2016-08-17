@@ -34,7 +34,7 @@
 <body>
   <div id="container">
     <h1>Color and font playground</h1>
-
+    <div id="errors"></div>
     <form>
     <div id="controls">
       <div class="control">
@@ -71,6 +71,8 @@
 // JavaScript goes here.
 $(document).ready(function() {
   var canvas = $('#canvas');
+  var numberReg =  /^[0-9]+$/;
+  var hexReg = /^#[0-9A-F]{3}$/i;
 
   function setStylesOnLoad() {
     $('input[type=radio][name=fontname]').load(function(e) {
@@ -106,7 +108,12 @@ $(document).ready(function() {
   });
 
   $('#textcolor').keyup(function(e) {
-    $(canvas).css('color', e.target.value);
+    if (hexReg.test($('#textcolor').val())) {
+      $('#errors').empty();
+      $(canvas).css('color', e.target.value);
+    } else {
+      $('#errors').html('<span>Please enter a valid hex code.</span>');
+    }
   });
 
   $('#bgcolor').keyup(function(e) {
