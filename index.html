@@ -101,27 +101,27 @@ $(document).ready(function() {
   setStylesOnLoad();
 
 
-  $('input[type=radio][name=fontname]').change(function(e) {
+  $('input[type=radio][name=fontname]').keyup(function(e) {
     $(canvas).css('font-family', e.target.value);
   });
 
-  $('#textcolor').change(function(e) {
+  $('#textcolor').keyup(function(e) {
     $(canvas).css('color', e.target.value);
   });
 
-  $('#bgcolor').change(function(e) {
+  $('#bgcolor').keyup(function(e) {
     $(canvas).css('background', e.target.value);
   });
 
-  $('#textsize').change(function(e) {
+  $('#textsize').keyup(function(e) {
     $(canvas).css('font-size', e.target.value.toString() + 'px');
   });
 
-  $('#lineheight').change(function(e) {
+  $('#lineheight').keyup(function(e) {
     $(canvas).css('line-height', e.target.value.toString() + 'px');
   });
 
-  $('#textpadding').change(function(e) {
+  $('#textpadding').keyup(function(e) {
     $(canvas).css('padding', e.target.value.toString() + 'px');
   });
 });
