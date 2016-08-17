@@ -74,6 +74,15 @@
   </div>
 <script>
 // JavaScript goes here.
+$(document).ready(function() {
+  $('input[type=radio][name=fontname]').change(function(e) {
+    $('#canvas').css('font-family', e.target.value);
+  });
+
+  $('#textcolor').change(function(e) {
+    $('#canvas').css('color', e.target.value);
+  });
+});
 </script>
 </body>
 </html>
