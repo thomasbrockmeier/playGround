@@ -86,6 +86,14 @@ $(document).ready(function() {
   $('#bgcolor').change(function(e) {
     $('#canvas').css('background', e.target.value);
   });
+
+  $('#textsize').change(function(e) {
+    $('#canvas').css('font-size', e.target.value.toString() + 'px');
+  });
+
+  $('#lineheight').change(function(e) {
+    $('#canvas').css('line-height', e.target.value.toString() + 'px');
+  });
 });
 </script>
 </body>
